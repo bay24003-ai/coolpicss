@@ -1,10 +1,12 @@
 /* GLOBAL */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
 /* HEADER */
+
 header {
     display: flex;
     align-items: center;
@@ -17,7 +19,8 @@ header {
     width: 60px;
 }
 
-/* MOBILE MENU */
+/* MENU BUTTON */
+
 #menu-button {
     margin-left: auto;
     padding: 8px 12px;
@@ -26,21 +29,29 @@ header {
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-/* NAVIGATION (hidden on mobile) */
+/* NAVIGATION */
+
 nav {
     display: none;
 }
 
+nav.show {
+    display: block;
+}
+
 nav a {
-    margin-right: 20px;
+    display: block;
+    margin: 10px 0;
     text-decoration: none;
     color: #333;
     font-weight: bold;
 }
 
 /* GALLERY */
+
 .gallery {
     display: grid;
     grid-template-columns: 1fr;
@@ -54,9 +65,37 @@ nav a {
     object-fit: cover;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
+}
+
+/* MODAL */
+
+dialog {
+    border: none;
+    padding: 1rem;
+    background: transparent;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#modal-image {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 /* FOOTER */
+
 footer {
     text-align: center;
     padding: 20px;
@@ -64,20 +103,24 @@ footer {
     color: white;
 }
 
-/* DESKTOP STYLES */
+/* DESKTOP */
+
 @media (min-width: 700px) {
 
-    /* Show nav on desktop */
     nav {
-        display: block;
+        display: flex;
         margin-left: auto;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0;
     }
 
     #menu-button {
         display: none;
     }
 
-    /* Gallery grid */
     .gallery {
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
