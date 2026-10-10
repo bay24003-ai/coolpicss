@@ -19,7 +19,7 @@ header {
     width: 60px;
 }
 
-/* MENU BUTTON */
+/* MOBILE MENU */
 
 #menu-button {
     margin-left: auto;
@@ -32,19 +32,18 @@ header {
     cursor: pointer;
 }
 
-/* NAVIGATION */
+/* NAV */
 
 nav {
     display: none;
 }
 
-nav.show {
+.show {
     display: block;
 }
 
 nav a {
-    display: block;
-    margin: 10px 0;
+    margin-right: 20px;
     text-decoration: none;
     color: #333;
     font-weight: bold;
@@ -70,28 +69,33 @@ nav a {
 
 /* MODAL */
 
-dialog {
-    border: none;
-    padding: 1rem;
-    background: transparent;
+.viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
 }
 
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-#modal-image {
-    max-width: 90vw;
-    max-height: 90vh;
+.viewer img {
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .close-viewer {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    font-size: 1rem;
+    top: 20px;
+    right: 20px;
+
+    border: none;
+    background: white;
+    font-size: 2rem;
     cursor: pointer;
+    padding: 5px 10px;
 }
 
 /* FOOTER */
@@ -108,13 +112,8 @@ footer {
 @media (min-width: 700px) {
 
     nav {
-        display: flex;
+        display: block;
         margin-left: auto;
-        gap: 20px;
-    }
-
-    nav a {
-        margin: 0;
     }
 
     #menu-button {
